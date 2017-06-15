@@ -5,20 +5,19 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
 @Table(name="question")
-@DiscriminatorColumn(name="QST_TYPE", discriminatorType=DiscriminatorType.INTEGER)
 public class Question implements Serializable
 {
 	private static final long serialVersionUID = 1L;
@@ -35,11 +34,18 @@ public class Question implements Serializable
 	@Column(name="QST_NUMERO")
 	private Integer numero;
 	
-	@OneToMany(mappedBy="question")
+	@OneToMany(mappedBy="questions")
 	private List<Proposition> propositions;
 	
 	@OneToOne
+	@JoinColumn(name="QST_QRE")
 	private Questionnaire questionnaire;
+	
+	
+	
+	
+	
+	
 
 	public Integer getIdQuestion() {
 		return idQuestion;

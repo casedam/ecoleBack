@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,11 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
 @Table(name="questionnaire")
-@DiscriminatorColumn(name="QRE_TYPE", discriminatorType=DiscriminatorType.INTEGER)
 public class Questionnaire implements Serializable
 {
 	private static final long serialVersionUID = 1L;
@@ -36,12 +34,18 @@ public class Questionnaire implements Serializable
 	@OneToOne
 	private Matiere matiere;
 	
-	@OneToMany(mappedBy="questionnaire")
+	@OneToMany(mappedBy="questionnaires")
 	private List<Test> tests;
 	
 	@OneToMany(mappedBy="questionnaire")
 	private List<Question> questions;
 
+	
+	
+	
+	
+	
+	
 	public Integer getIdQuestionnaire() {
 		return idQuestionnaire;
 	}

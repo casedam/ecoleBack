@@ -31,6 +31,11 @@ public class Matiere implements Serializable {
 
 	@OneToMany(mappedBy = "matiere")
 	private List<Questionnaire> questionnaires;
+	
+	
+	
+	
+	
 
 	public int getIdMatiere() {
 		return idMatiere;

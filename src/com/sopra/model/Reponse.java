@@ -3,8 +3,6 @@ package com.sopra.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +12,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "reponse")
-@DiscriminatorColumn(name = "REP_TYPE", discriminatorType = DiscriminatorType.INTEGER)
 public class Reponse implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -28,6 +25,11 @@ public class Reponse implements Serializable {
 
 	@Column(name = "REP_REPONSE")
 	private String reponse;
+	
+	
+	
+	
+	
 
 	public Integer getIdReponse() {
 		return idReponse;

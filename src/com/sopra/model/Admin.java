@@ -1,19 +1,43 @@
 package com.sopra.model;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="admin")
+@DiscriminatorValue("Admin")
 public class Admin extends Personne {
 	private static final long serialVersionUID = 1L;
 	
+	
+	/**
+	 * Attributs
+	 */
 	@Column(name="ADM_USERNAME")
 	private String username;
 	
 	@Column(name="ADM_PASSWORD")
 	private String password;
+	
+	
+	
+	
+	
+	/**
+	 * Constructeur
+	 */
+	public Admin(int idPersonne, String nom, String prenom, String username, String password) {
+		super(idPersonne, nom, prenom);
+		this.username = username;
+		this.password = password;
+	}
+	
+	
+	
+	
+	/**
+	 * Getters et setters
+	 */
 	public String getUsername() {
 		return username;
 	}
@@ -30,15 +54,6 @@ public class Admin extends Personne {
 		this.password = password;
 	}
 
-	@Override
-	public int getId() {
-		return super.getId();
-	}
-
-	@Override
-	public void setId(int idPersonne) {
-		super.setId(idPersonne);
-	}
 
 	@Override
 	public String getNom() {
@@ -59,11 +74,5 @@ public class Admin extends Personne {
 	public void setPrenom(String prenom) {
 		// TODO Auto-generated method stub
 		super.setPrenom(prenom);
-	}
-
-	public Admin(int idPersonne, String nom, String prenom, String username, String password) {
-		super(idPersonne, nom, prenom);
-		this.username = username;
-		this.password = password;
 	}
 }

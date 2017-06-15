@@ -4,18 +4,16 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "proposition")
-@DiscriminatorColumn(name = "PRO_TYPE", discriminatorType = DiscriminatorType.INTEGER)
 public class Proposition implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -30,8 +28,14 @@ public class Proposition implements Serializable {
 	@Column(name = "PRO_NUMERO")
 	private Character numero;
 	
-	@OneToMany(mappedBy="proposition")
+	@OneToMany
+	@JoinColumn(name="propositions")
 	private List<Question> questions;
+	
+	
+	
+	
+	
 
 	public Integer getIdProposition() {
 		return idProposition;
