@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -25,6 +28,12 @@ public class Reponse implements Serializable {
 
 	@Column(name = "REP_REPONSE")
 	private String reponse;
+	
+	@ManyToOne
+	private Question question;
+	
+	@ManyToOne
+	private Test test;
 	
 	
 	

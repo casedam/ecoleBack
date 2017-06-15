@@ -41,6 +41,9 @@ public class Test implements Serializable {
 	@OneToOne
 	@JoinColumn(name="CANDIDAT_ID")
 	private Candidat candidat;
+	
+	@OneToMany(mappedBy="test")
+	private List<Reponse> reponses;
 
 	
 	

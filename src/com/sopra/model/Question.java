@@ -41,6 +41,9 @@ public class Question implements Serializable
 	@JoinColumn(name="QST_QRE")
 	private Questionnaire questionnaire;
 	
+	@OneToMany(mappedBy="question")
+	private List<Reponse> reponse;
+	
 	
 	
 	
@@ -86,6 +89,13 @@ public class Question implements Serializable
 	public void setQuestionnaire(Questionnaire questionnaire) {
 		this.questionnaire = questionnaire;
 	}
+	
+	
+	
+	
+	
+	
+	
 
 	public Question(Integer idQuestion, String intitule, Integer numero, List<Proposition> propositions,
 			Questionnaire questionnaire) {
