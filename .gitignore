@@ -6,3 +6,5 @@
 \.settings/
 
 target/classes/com/sopra/model/
+
+target/m2e-wtp/web-resources/META-INF/
