@@ -11,27 +11,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name="reponse")
-@DiscriminatorColumn(name="REP_TYPE", discriminatorType=DiscriminatorType.INTEGER)
-public class Reponse implements Serializable
-{
+@Table(name = "reponse")
+@DiscriminatorColumn(name = "REP_TYPE", discriminatorType = DiscriminatorType.INTEGER)
+public class Reponse implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="REP_ID")
-	@NotBlank
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "REP_ID")
 	private Integer idReponse;
-	
-	@Column(name="REP_TEMPS_DE_REPONSE")
-	@NotBlank
+
+	@Column(name = "REP_TEMPS_DE_REPONSE")
 	private Integer tempsDeReponse;
-	
-	@Column(name="REP_REPONSE")
-	@NotBlank
+
+	@Column(name = "REP_REPONSE")
 	private String reponse;
 
 	public Integer getIdReponse() {
@@ -55,6 +50,13 @@ public class Reponse implements Serializable
 	}
 
 	public void setReponse(String reponse) {
+		this.reponse = reponse;
+	}
+
+	public Reponse(Integer idReponse, Integer tempsDeReponse, String reponse) {
+		super();
+		this.idReponse = idReponse;
+		this.tempsDeReponse = tempsDeReponse;
 		this.reponse = reponse;
 	}
 

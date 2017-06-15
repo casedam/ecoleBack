@@ -2,6 +2,7 @@ package com.sopra.model;
 
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -11,9 +12,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import org.hibernate.validator.constraints.NotBlank;
 
 
 @Entity
@@ -27,16 +27,19 @@ public class Question implements Serializable
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="QST_ID")
-	@NotBlank
 	private Integer idQuestion;
 	
 	@Column(name="QST_INTITULE")
-	@NotBlank
 	private String intitule;
 	
 	@Column(name="QST_NUMERO")
-	@NotBlank
 	private Integer numero;
+	
+	@OneToMany(mappedBy="question")
+	private List<Proposition> propositions;
+	
+	@OneToOne
+	private Questionnaire questionnaire;
 
 	public Integer getIdQuestion() {
 		return idQuestion;
@@ -61,8 +64,33 @@ public class Question implements Serializable
 	public void setNumero(Integer numero) {
 		this.numero = numero;
 	}
+
+	public List<Proposition> getPropositions() {
+		return propositions;
+	}
+
+	public void setPropositions(List<Proposition> propositions) {
+		this.propositions = propositions;
+	}
+
+	public Questionnaire getQuestionnaire() {
+		return questionnaire;
+	}
+
+	public void setQuestionnaire(Questionnaire questionnaire) {
+		this.questionnaire = questionnaire;
+	}
+
+	public Question(Integer idQuestion, String intitule, Integer numero, List<Proposition> propositions,
+			Questionnaire questionnaire) {
+		super();
+		this.idQuestion = idQuestion;
+		this.intitule = intitule;
+		this.numero = numero;
+		this.propositions = propositions;
+		this.questionnaire = questionnaire;
+	}
 	
-	@OneToMany(mappedBy="question")
-	private Proposition proposition;
+	
 
 }

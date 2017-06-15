@@ -3,8 +3,6 @@ package com.sopra.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,13 +11,11 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 
 
 @Entity
 @Table(name="personne")
-@Inheritance(strategy=InheritanceType.JOINED )
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 
 public abstract class Personne implements Serializable
 {
@@ -32,11 +28,9 @@ public abstract class Personne implements Serializable
 	private int idPersonne;
 	
 	@Column(name="PER_NOM")
-	@NotBlank
 	private String nom;
 	
 	@Column(name="PER_PRENOM")
-	@NotBlank
 	private String prenom;
 	
 	

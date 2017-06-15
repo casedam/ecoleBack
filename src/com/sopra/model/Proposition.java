@@ -1,6 +1,7 @@
 package com.sopra.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -9,9 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "proposition")
@@ -22,16 +22,16 @@ public class Proposition implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "PRO_ID")
-	@NotBlank
 	private Integer idProposition;
 
 	@Column(name = "PRO_IS_CORRECT")
-	@NotBlank
 	private Boolean isCorrect;
 
 	@Column(name = "PRO_NUMERO")
-	@NotBlank
 	private Character numero;
+	
+	@OneToMany(mappedBy="proposition")
+	private List<Question> questions;
 
 	public Integer getIdProposition() {
 		return idProposition;
@@ -56,5 +56,23 @@ public class Proposition implements Serializable {
 	public void setNumero(Character numero) {
 		this.numero = numero;
 	}
+
+	public List<Question> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(List<Question> questions) {
+		this.questions = questions;
+	}
+
+	public Proposition(Integer idProposition, Boolean isCorrect, Character numero, List<Question> questions) {
+		super();
+		this.idProposition = idProposition;
+		this.isCorrect = isCorrect;
+		this.numero = numero;
+		this.questions = questions;
+	}
+	
+	
 
 }

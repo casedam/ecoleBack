@@ -8,35 +8,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotBlank;
-
-
-
-	
-
 @Entity
-@Table(name="matiere")
+@Table(name = "matiere")
 
-public abstract class Matiere implements Serializable
-{
+public class Matiere implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	public Matiere() {
 		// TODO Auto-generated constructor stub
 	}
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="MAT_ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "MAT_ID")
 	private int idMatiere;
-	
-	@Column(name="MAT_NOM")
-	@NotBlank
+
+	@Column(name = "MAT_NOM")
 	private String nom;
+
+	@OneToMany(mappedBy = "matiere")
+	private List<Questionnaire> questionnaires;
 
 	public int getIdMatiere() {
 		return idMatiere;
@@ -59,10 +53,6 @@ public abstract class Matiere implements Serializable
 		this.idMatiere = idMatiere;
 		this.nom = nom;
 	}
-	
-	
-	@OneToMany(mappedBy="questionnaire")
-	private List<Questionnaire> questionnaires;
 
 	public List<Questionnaire> getQuestionnaires() {
 		return questionnaires;
@@ -71,6 +61,5 @@ public abstract class Matiere implements Serializable
 	public void setQuestionnaires(List<Questionnaire> questionnaires) {
 		this.questionnaires = questionnaires;
 	}
-	
-	
+
 }

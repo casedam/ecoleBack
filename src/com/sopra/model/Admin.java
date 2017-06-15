@@ -4,19 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 @Entity
 @Table(name="admin")
 public class Admin extends Personne {
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name="ADM_USERNAME")
-	@NotBlank
 	private String username;
 	
 	@Column(name="ADM_PASSWORD")
-	@NotBlank
 	private String password;
 	public String getUsername() {
 		return username;
