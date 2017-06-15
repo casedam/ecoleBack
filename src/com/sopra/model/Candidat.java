@@ -16,9 +16,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="candidat")
 public class Candidat extends Personne {
+	private static final long serialVersionUID = 1L;
 
-	public Candidat() {
-	}
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CAN_CLE")
@@ -55,6 +54,20 @@ public class Candidat extends Personne {
 		super.setPrenom(prenom);
 	}
 	
+
+
 	@OneToMany(mappedBy="test")
 	private List<Test> test;
+	
+	public List<Test> getTest() {
+		return test;
+	}
+	public void setTest(List<Test> test) {
+		this.test = test;
+	}
+	public Candidat(int idPersonne, String nom, String prenom, String cle, List<Test> test) {
+		super(idPersonne, nom, prenom);
+		Cle = cle;
+		this.test = test;
+	}
 }

@@ -66,6 +66,13 @@ public abstract class Personne implements Serializable
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+
+	public Personne(int idPersonne, String nom, String prenom) {
+		super();
+		this.idPersonne = idPersonne;
+		this.nom = nom;
+		this.prenom = prenom;
+	}
 	
 }
 	
