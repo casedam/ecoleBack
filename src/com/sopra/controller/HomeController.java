@@ -22,4 +22,21 @@ public class HomeController extends DataAccessController {
 	}
 
 
+	
+	
+	
+	/*
+	 * Page LOGOUT
+	 */
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logoutGET(Model model, HttpSession session) {
+
+		// Permet de supprimer la session
+		session.invalidate();
+
+		// Permet de rediriger vers la page login
+		return "redirect:login";
+	}
+
+
 }
