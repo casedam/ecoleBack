@@ -6,6 +6,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <br>
+<div>
 <table class="bordered">
 	<tr>
 		<th>Edition de la question</th>
@@ -16,9 +17,16 @@
 		<td class="input-field"><input type="hidden" name="id"
 			value="${ question.id }" /> <input id="question_nom" type="text"
 			class="validate" name="nom" value="${ question.nom }" /> <label
-			for="question_nom"></label></label></td>
+			for="question_nom"></label></td>
 	</tr>
 </table>
+
+			
+			<%-- <c:if test="${ question.id != null }">
+				<a class="btn red waves-effect waves-light" href="${ pageContext.request.contextPath }/tetrimino">
+					Annuler <i class="material-icons right">fast_rewind</i>
+				</a> --%>
+</div>
 <br>
 <br>
 <table>
@@ -28,35 +36,41 @@
 	</tr>
 	<tr>
 		<td>Réponse 1</td>
-		<td><input id="question_nom" type="text"
+		<td><input id="reponse_nom" type="text"
 			class="validate" name="nom" value="${ reponse.nom }" /> <label
-			for="reponse_nom"></label></label></td>
+			for="reponse_nom"></label></td>
 	</tr>
 	<tr>
 		<td>Réponse 2</td>
-		<td><input id="question_nom" type="text"
+		<td><input id="reponse_nom" type="text"
 			class="validate" name="nom" value="${ reponse.nom }" /> <label
-			for="reponse_nom"></label></label></td>
+			for="reponse_nom"></label></td>
 	</tr>
 	<tr>
 		<td>Réponse 3</td>
-		<td><input id="question_nom" type="text"
+		<td><input id="reponse_nom" type="text"
 			class="validate" name="nom" value="${ reponse.nom }" /> <label
-			for="reponse_nom"></label></label></td>
+			for="reponse_nom"></label></td>
 	</tr>
 	<tr>
 		<td>Réponse 4</td>
-		<td><input id="question_nom" type="text"
+		<td><input id="reponse_nom" type="text"
 			class="validate" name="nom" value="${ reponse.nom }" /> <label
-			for="reponse_nom"></label></label></td>
+			for="reponse_nom"></label></td>
 	</tr>
 	<tr>
 		<td>Réponse 2</td>
-		<td><input id="question_nom" type="text"
+		<td><input id="reponse_nom" type="text"
 			class="validate" name="nom" value="${ reponse.nom }" /> <label
-			for="reponse_nom"></label></label></td>
+			for="reponse_nom"></label></td>
 	</tr>
 </table>
+<br>
+<c:if test="${ question.id == null }">
+				<button class="btn amber success waves-effect waves-light" type="submit">
+					Valider <i class="material-icons right">send</i>
+				</button>
+			</c:if>
 
 
 <%-- <div class="row">
