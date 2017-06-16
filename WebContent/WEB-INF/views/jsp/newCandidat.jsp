@@ -12,17 +12,27 @@
 <div class="row">
 	<div class="col s4">
 		<h5>Formulaire candidat</h5>
-		<form method="post">
-			<input type="hidden" name="id" value="${ candidat.idPersonne }" />
+		<form:form class="col s12" method="POST" action="" modelAttribute="candidat" >
+			<input type="hidden" name="id" value="${ personne.idPersonne }" />
 			
 			<div class="input-field">
+			
+			<form:input class="validate" path="nom" />
+			<form:label path="nom" data-error="" data-success="">Nom </form:label>
+			
+			<%-- 
 				<input id="candidat_nom" type="text" class="validate" name="nom" value="${ candidat.nom }" />
-				<label for="candidat_nom">Nom</label>
+				<label for="candidat_nom">Nom</label> --%>
 			</div>
 			
+			
+			
 			<div class="input-field">
-				<input id="candidat_prenom" type="text" class="validate" name="prenom" value="${ candidat.prenom }" />
-				<label for="candidat_prenom">Prenom</label>
+			<form:input class="validate" path="prenom" />
+			<form:label path="prenom" data-error="" data-success="">Prenom </form:label>
+			
+				<%-- <input id="candidat_prenom" type="text" class="validate" name="prenom" value="${ candidat.prenom }" />
+				<label for="candidat_prenom">Prenom</label> --%>
 			</div>
 			
 			
@@ -42,7 +52,7 @@
 			</button>
 			
 			
-		</form>	
+		</form:form>	
 				
 </div>
 </div>
