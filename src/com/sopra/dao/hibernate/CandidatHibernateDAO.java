@@ -8,12 +8,13 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sopra.dao.ICandidatDAO;
 import com.sopra.dao.IDAO;
 import com.sopra.model.Candidat;
 
 @Repository
 @Transactional
-public class CandidatHibernateDAO implements IDAO<Candidat, Integer> {
+public class CandidatHibernateDAO implements ICandidatDAO {
 
 	@PersistenceContext
 	private EntityManager entityManager;
