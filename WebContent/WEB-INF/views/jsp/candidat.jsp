@@ -11,7 +11,7 @@
 
 
 <div class="fixed-action-btn">
-	<a href="candidat/new" class="btn-floating btn-large red"> <i
+	<a href="new" class="btn-floating btn-large red"> <i
 		class="large material-icons">add</i>
 	</a>
 </div>
