@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sopra.dao.IDAO;
+import com.sopra.model.Admin;
 import com.sopra.model.Proposition;
 import com.sopra.model.Question;
-import com.sopra.hibernate.dao.*;
-
 @Controller
 @RequestMapping("/question")
 public class QuestionController extends DataAccessController {
@@ -31,10 +30,24 @@ public class QuestionController extends DataAccessController {
 
 	@RequestMapping(value="/new", method = RequestMethod.GET)
 	public String newQuestionGET(Model model) {
+
+		model.addAttribute("questionTraitee", new Question());
 		
+		return "newQuestion";
+	}
+	
+	@RequestMapping(value="/new", method = RequestMethod.POST)
+	public String newQuestionPOST(@ModelAttribute("questionTraitee") Question question, BindingResult result, Model model) {
+		
+		String intitule = question.getIntitule();
+		Integer numero = question.getNumero();
+		System.out.println(question.getIntitule());
+		System.out.println(question.getNumero());
 
 		return "newQuestion";
 	}
+	
+	
 
 	/*
 	@RequestMapping(value = { "/edit", "/edit/{id}" }, method = RequestMethod.GET)

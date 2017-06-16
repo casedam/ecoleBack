@@ -93,7 +93,7 @@ public class Question implements Serializable
 	
 	
 	
-	
+
 	
 
 	public Question(Integer idQuestion, String intitule, Integer numero, List<Proposition> propositions,
@@ -104,6 +104,12 @@ public class Question implements Serializable
 		this.numero = numero;
 		this.propositions = propositions;
 		this.questionnaire = questionnaire;
+	}
+
+	
+
+	public Question() {
+
 	}
 	
 	

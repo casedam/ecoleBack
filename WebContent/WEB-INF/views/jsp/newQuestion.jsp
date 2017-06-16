@@ -6,27 +6,44 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <br>
-<div>
-<table class="bordered">
-	<tr>
-		<th>Edition de la question</th>
-		<th>Question numéro ...</th>
-	</tr>
-	<tr>
-		<td>Ecrivez votre question :</td>
-		<td class="input-field"><input type="hidden" name="id"
-			value="${ question.id }" /> <input id="question_nom" type="text"
-			class="validate" name="nom" value="${ question.nom }" /> <label
-			for="question_nom"></label></td>
-	</tr>
-</table>
+<form:form class="col s12" method="POST" action=""
+	modelAttribute="questionTraitee">
+	<div>
+		<table class="bordered">
+			<tr>
+				<th>Edition de la question</th>
+				<th>Question N°<form:input class="validate" path="numero" /> <form:label
+						path="numero" data-error="" data-success="">Numéro de la question</form:label></th>
+			</tr>
+			<tr>
+				<td>Ecrivez votre question :</td>
+				<td><form:input class="validate" path="intitule" /> <form:label
+						path="intitule" data-error="" data-success="">Intitulé de la question</form:label>
+				</td>
+			</tr>
+		</table>
+	</div>
 
-			
-			<%-- <c:if test="${ question.id != null }">
-				<a class="btn red waves-effect waves-light" href="${ pageContext.request.contextPath }/tetrimino">
-					Annuler <i class="material-icons right">fast_rewind</i>
-				</a> --%>
-</div>
+
+	<button class="btn amber success waves-effect waves-light"
+		type="submit">
+		Valider <i class="material-icons right">send</i>
+	</button>
+
+
+</form:form>
+
+
+
+
+
+<%-- 			<form:input class="validate" path="username" /> --%>
+<%-- 			<form:label path="username" data-error="" data-success="">Nom d'utilisateur</form:label> --%>
+
+
+
+
+
 <br>
 <br>
 <table>
@@ -36,82 +53,32 @@
 	</tr>
 	<tr>
 		<td>Réponse 1</td>
-		<td><input id="reponse_nom" type="text"
-			class="validate" name="nom" value="${ reponse.nom }" /> <label
-			for="reponse_nom"></label></td>
+		<td><input id="reponse_nom" type="text" class="validate"
+			name="nom" value="${ reponse.nom }" /> <label for="reponse_nom"></label></td>
 	</tr>
 	<tr>
 		<td>Réponse 2</td>
-		<td><input id="reponse_nom" type="text"
-			class="validate" name="nom" value="${ reponse.nom }" /> <label
-			for="reponse_nom"></label></td>
+		<td><input id="reponse_nom" type="text" class="validate"
+			name="nom" value="${ reponse.nom }" /> <label for="reponse_nom"></label></td>
 	</tr>
 	<tr>
 		<td>Réponse 3</td>
-		<td><input id="reponse_nom" type="text"
-			class="validate" name="nom" value="${ reponse.nom }" /> <label
-			for="reponse_nom"></label></td>
+		<td><input id="reponse_nom" type="text" class="validate"
+			name="nom" value="${ reponse.nom }" /> <label for="reponse_nom"></label></td>
 	</tr>
 	<tr>
 		<td>Réponse 4</td>
-		<td><input id="reponse_nom" type="text"
-			class="validate" name="nom" value="${ reponse.nom }" /> <label
-			for="reponse_nom"></label></td>
+		<td><input id="reponse_nom" type="text" class="validate"
+			name="nom" value="${ reponse.nom }" /> <label for="reponse_nom"></label></td>
 	</tr>
 	<tr>
 		<td>Réponse 2</td>
-		<td><input id="reponse_nom" type="text"
-			class="validate" name="nom" value="${ reponse.nom }" /> <label
-			for="reponse_nom"></label></td>
+		<td><input id="reponse_nom" type="text" class="validate"
+			name="nom" value="${ reponse.nom }" /> <label for="reponse_nom"></label></td>
 	</tr>
 </table>
 <br>
-<c:if test="${ question.id == null }">
-				<button class="btn amber success waves-effect waves-light" type="submit">
-					Valider <i class="material-icons right">send</i>
-				</button>
-			</c:if>
 
-
-<%-- <div class="row">
-	<div class="col s4">
-		<h5>Edition d'une question</h5>
-<form method="post">
-			<input type="hidden" name="id" value="${ question.id }" />
-			<div class="input-field col s12">
-				<input id="question_nom" type="text" class="validate" name="nom" value="${ question.nom }" />
-				<label for="question_nom"></label>
-			</div>
- --%>
-<!-- <div class="row">
-		<div class="input-field col s12">
-			<input id="question" type="question" class="validate"> <label
-				for="question">Editez votre question</label>
-		</div>
-	</div> -->
-<%-- <form action="#">
-	<div class="row">
-		<div class="input-field col s12">
-			<input class="with-gap" name="group1" type="radio" id="test1" /> <label
-				for="test1">{{reponse1}}</label>
-		</div>
-	</div>
-	<div class="row">
-		<div class="input-field col s12">
-			<input class="with-gap" name="group1" type="radio" id="test2" /> <label
-				for="test2">{{reponse2}}</label>
-		</div>
-	</div>
-	<div class="row">
-		<div class="input-field col s12">
-			<input class="with-gap" name="group1" type="radio" id="test3" /> <label
-				for="test3">{{reponse3}}</label>
-		</div>
-	</div>
-	<div class="row">
-		<div class="input-field col s12">
-			<input class="with-gap" name="group1" type="radio" id="test4" /> <label
-				for="test4">{{reponse4}}</label>
-		</div>
-	</div>
-</form> --%>
+<button class="btn amber success waves-effect waves-light" type="submit">
+	Valider <i class="material-icons right">send</i>
+</button>
