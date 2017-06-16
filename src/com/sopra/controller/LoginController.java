@@ -63,7 +63,7 @@ public class LoginController extends DataAccessController {
 				model.addAttribute("MessageAlertMdPLogin", false);
 				
 				// Permet d'enregistrer le username dans la variable user
-				session.setAttribute("user", username);
+				session.setAttribute("username", username);
 
 				// Permet de rediriger vers la page home
 				return "redirect:home";
@@ -81,7 +81,6 @@ public class LoginController extends DataAccessController {
 		}
 		return null;
 	}
-
 
 	
 }

@@ -15,7 +15,7 @@
 <nav>
 	<div class="nav-wrapper">
 		<div class="container">
-			<a class="brand-logo">Gestionnaire des tests</a>
+			<a class="brand-logo"><tiles:insertAttribute name="title" ignore="true" /></a>
 
 
 
@@ -23,10 +23,14 @@
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 				
 							
-					<li><a
-						href="${ pageContext.request.contextPath }/account/login">Accueil</a></li>
+					<li><a href="${ pageContext.request.contextPath }/home">Accueil</a></li>
 
-					<li><a href="${ pageContext.request.contextPath }/questionnaire">Questionnaires</a></li>
+					<li><a href="${ pageContext.request.contextPath }/question">Questions</a></li>
+
+					<li><a href="${ pageContext.request.contextPath }/candidat">Candidats</a></li>
+					
+					
+					
 				</ul>
 
 
