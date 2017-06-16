@@ -68,5 +68,9 @@ public class Reponse implements Serializable {
 		this.tempsDeReponse = tempsDeReponse;
 		this.reponse = reponse;
 	}
+	
+	public Reponse(){
+		
+	}
 
 }
