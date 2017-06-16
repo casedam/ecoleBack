@@ -26,7 +26,7 @@
 			<tr>
 				<td>${ candidat.nom }</td>
 				<td>${ candidat.prenom }</td>
-				<td>${ candidat.cle }</td>
+				<td>${ candidat.cleAcces }</td>
 			</tr>
 		</table>
 

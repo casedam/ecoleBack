@@ -26,6 +26,22 @@
 			</div>
 			
 			
+			<!-- Bouton permettant la génération d'une clé d'accès -->
+			<a id="cleAccess" class="btn waves-effect waves-light">
+				Générer une clé d'accès
+			</a>
+			
+			<div class="raw">
+				Voici la clé d'accès générée : <span id="texteAInserer"></span>
+			</div>
+			
+			
+			<!-- Bouton permettant l'envoie du formulaire -->
+			<button id="submitCandidat" class="btn waves-effect waves-light" type="submit">
+				Créer un nouveau candidat
+			</button>
+			
+			
 		</form>	
 				
 </div>

@@ -30,13 +30,13 @@ public class Candidat extends Personne {
 	 * Constructeurs
 	 */
 	
-	public Candidat(int idPersonne, String nom, String prenom) {
-		super(idPersonne, nom, prenom);
+	public Candidat() {
 	}
 	
-	public Candidat(int idPersonne, String nom, String prenom, String cle, Test test) {
+	public Candidat(int idPersonne, String nom, String prenom, String cleAcces, Test test) {
 		super(idPersonne, nom, prenom);
 		this.test = test;
+		this.cleAcces = cleAcces;
 	}
 
 
@@ -78,6 +78,14 @@ public class Candidat extends Personne {
 
 	public void setTest(Test test) {
 		this.test = test;
+	}
+
+	public String getCleAcces() {
+		return cleAcces;
+	}
+
+	public void setCleAcces(String cleAcces) {
+		this.cleAcces = cleAcces;
 	}
 
 }
