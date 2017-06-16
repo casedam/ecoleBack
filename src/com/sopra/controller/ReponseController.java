@@ -1,5 +1,6 @@
 package com.sopra.controller;
 
+import org.omg.CORBA.PRIVATE_MEMBER;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -8,42 +9,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sopra.model.Question;
+import com.sopra.model.Reponse;
+
 @Controller
-@RequestMapping("/question")
-public class QuestionController extends DataAccessController {
-
-
+@RequestMapping("/reponse")
+public class ReponseController extends DataAccessController{
 	@RequestMapping(value="", method = RequestMethod.GET)
 	public String getAll(Model model) {
 		
 
-		return "question";
+		return "reponse";
 	}
 
 	@RequestMapping(value="/new", method = RequestMethod.GET)
 	public String newQuestionGET(Model model) {
 
-		model.addAttribute("questionTraitee", new Question());
+		model.addAttribute("reponseTraitee", new Reponse());
 		
-		return "newQuestion";
+		return "newReponse";
 	}
 	
 	@RequestMapping(value="/new", method = RequestMethod.POST)
-	public String newQuestionPOST(@ModelAttribute("questionTraitee") Question question, BindingResult result, Model model) {
+	public String newQuestionPOST(@ModelAttribute("reponseTraitee") Reponse reponse, BindingResult result, Model model) {
 		
-		String intitule = question.getIntitule();
-		Integer numero = question.getNumero();
+	
+		
+		String reponseChoisie = reponse.getReponse();
 		
 		
-		System.out.println(question.getIntitule());
-		System.out.println(question.getNumero());
 		
-		questionDAO.save(question);
+		System.out.println(reponse.getReponse());
+		
+		
+		propositionDAO.save(reponse);
 
-		return "newQuestion";
+		return "newReponse";
 	}
 	
-	
 
-	
 }
