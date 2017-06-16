@@ -69,6 +69,13 @@ public abstract class Personne implements Serializable
 		this.nom = nom;
 		this.prenom = prenom;
 	}
+
+
+	public Personne() {
+		super();
+	}
+
+	
 	
 }
 	
