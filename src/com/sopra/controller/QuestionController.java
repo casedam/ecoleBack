@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.sopra.model.Question;
 
 
+
 @Controller
 @RequestMapping("/question")
 public class QuestionController extends DataAccessController {
@@ -20,10 +21,13 @@ public class QuestionController extends DataAccessController {
 		
 		model.addAttribute("questions", questionDAO.findAll());
 
-
 		return "question";
 	}
 
+	
+	
+	
+	
 	@RequestMapping(value="/new", method = RequestMethod.GET)
 	public String newQuestionGET(Model model) {
 
@@ -31,6 +35,10 @@ public class QuestionController extends DataAccessController {
 		
 		return "newQuestion";
 	}
+	
+	
+	
+	
 	
 	@RequestMapping(value="/new", method = RequestMethod.POST)
 	public String newQuestionPOST(@ModelAttribute("questionTraitee") Question question, BindingResult result, Model model) {
@@ -44,7 +52,7 @@ public class QuestionController extends DataAccessController {
 		
 		questionDAO.save(question);
 
-		return "newQuestion";
+		return "redirect:";
 	}
 	
 	
