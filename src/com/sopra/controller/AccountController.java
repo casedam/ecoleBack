@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/account")
-public class accountController extends DataAccessController {
+public class AccountController extends DataAccessController {
 
 	/*
 	 * Page LOGIN
