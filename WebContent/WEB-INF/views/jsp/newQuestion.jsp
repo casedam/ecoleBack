@@ -36,14 +36,6 @@
 
 
 
-
-<%-- 			<form:input class="validate" path="username" /> --%>
-<%-- 			<form:label path="username" data-error="" data-success="">Nom d'utilisateur</form:label> --%>
-
-
-
-
-
 <br>
 <br>
 <table>
