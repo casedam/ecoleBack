@@ -107,7 +107,9 @@ public class Questionnaire implements Serializable
 	}
 
 	
-	
+	public Questionnaire() {
+		
+	}
 
 
 }
