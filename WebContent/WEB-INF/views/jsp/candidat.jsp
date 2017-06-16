@@ -19,16 +19,28 @@
 
 
 <div class="row">
-	<c:forEach items="${ candidats }" var="candidat">
+	
 
-		<table>
 
-			<tr>
-				<td>${ candidat.nom }</td>
+
+<table class="highlight"  >
+        <thead>
+          <tr>
+              <th>nom</th>
+              <th>prenom</th>
+              <th>Cle d'acces</th>
+          </tr>
+        </thead>
+<c:forEach items="${ candidats }" var="candidat">
+        <tbody>
+          <tr>
+           <td>${ candidat.nom }</td>
 				<td>${ candidat.prenom }</td>
 				<td>${ candidat.cleAcces }</td>
-			</tr>
-		</table>
+          </tr>
+    </c:forEach>
+      </table>
+		
 
-</c:forEach>
+
 </div>
