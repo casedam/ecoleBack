@@ -30,7 +30,7 @@ public class CandidatController extends DataAccessController {
 	
 	
 	/*
-	 * Page LOGIN
+	 * Page CANDIDAT
 	 */
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String loginGET(HttpSession session, Model model) {
@@ -41,14 +41,11 @@ public class CandidatController extends DataAccessController {
 		// Permet de rediriger vers la page candidat
 		return "candidat";
 	}
-
-//	@RequestMapping("")
-//	public String getAll(Model model) {
-//		model.addAttribute("candidats", this.candidatDAO.findAll());
-//		
-//		return "candidats";
-//	}
-//	
+	
+	
+	
+	
+	
 	
 		@RequestMapping(value = "/new", method = RequestMethod.GET)
 		public String newGET(HttpSession session, Model model) {
@@ -59,8 +56,11 @@ public class CandidatController extends DataAccessController {
 		// Permet de rediriger vers la page nouveau candidat
 		return "newCandidat";
 	}
-//	}
-//	
+		
+		
+		
+		
+		
 	
 		@RequestMapping(value = "/new", method = RequestMethod.POST)
 		public String newPOST(@ModelAttribute("candidat") Candidat candidat, BindingResult result, HttpSession session, Model model) {

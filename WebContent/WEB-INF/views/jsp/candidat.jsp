@@ -7,15 +7,11 @@
 
 <br>
 
-
-
-
-<div class="fixed-action-btn">
-	<a href="new" class="btn-floating btn-large red"> <i
-		class="large material-icons">add</i>
-	</a>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+	<form method="GET" action="candidat/new">
+    	<button class="btn-floating btn-large waves-effect waves-light red" type="submit"><i class="material-icons">add</i></button>
+	</form>
 </div>
-
 
 
 <div class="row">

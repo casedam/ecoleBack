@@ -46,6 +46,8 @@
 			</div>
 			
 			
+			
+			
 			<!-- Bouton permettant l'envoie du formulaire -->
 			<button id="submitCandidat" class="btn waves-effect waves-light" type="submit">
 				Créer un nouveau candidat

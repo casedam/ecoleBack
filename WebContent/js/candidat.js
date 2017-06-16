@@ -17,6 +17,8 @@ function cleAccessFunction() {
 
 	$('#texteAInserer').text(cleAccess);
 	
+	$
+	
 }
 
 // Surveillance de l'évènement
