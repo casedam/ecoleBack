@@ -35,7 +35,8 @@
 		<property name="definitions">
 			<list>
 				<value>/WEB-INF/tiles/structure.xml</value>			
-				<value>/WEB-INF/tiles/account.xml</value>
+				<value>/WEB-INF/tiles/account.xml</value>		
+				<value>/WEB-INF/tiles/candidat.xml</value>
 			</list>
 		</property>
 	</bean>
