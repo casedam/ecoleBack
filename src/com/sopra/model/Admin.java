@@ -33,8 +33,14 @@ public class Admin extends Personne {
 	}
 	
 	
-	
-	
+
+	public Admin() {
+		super();
+	}
+
+
+
+
 	/**
 	 * Getters et setters
 	 */
