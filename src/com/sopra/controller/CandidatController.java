@@ -68,6 +68,7 @@ public class CandidatController extends DataAccessController {
 			// On récupère les paramètres dans le scope HttpSession
 			String nom = candidat.getNom();
 			String prenom = candidat.getPrenom();
+			String cleAccess = candidat.getCleAcces();
 			
 			System.out.println(nom);
 			

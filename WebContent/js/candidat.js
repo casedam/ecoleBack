@@ -16,9 +16,8 @@ function cleAccessFunction() {
 			+ alphabet[cleAccessNumber[4]] + alphabet[cleAccessNumber[5]];
 
 	$('#texteAInserer').text(cleAccess);
-	
-	$
-	
+
+	$('#idCleAccess').val(cleAccess);
 }
 
 // Surveillance de l'évènement
