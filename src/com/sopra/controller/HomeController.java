@@ -35,7 +35,7 @@ public class HomeController extends DataAccessController {
 		session.invalidate();
 
 		// Permet de rediriger vers la page login
-		return "redirect:/ecoleBack/login";
+		return "redirect:/login";
 	}
 
 
