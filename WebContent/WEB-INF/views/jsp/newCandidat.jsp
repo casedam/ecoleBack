@@ -13,26 +13,18 @@
 	<div class="col s4">
 		<h5>Formulaire candidat</h5>
 		<form:form class="col s12" method="POST" action="" modelAttribute="candidat" >
-			<input type="hidden" name="id" value="${ personne.idPersonne }" />
+			
 			
 			<div class="input-field">
-			
-			<form:input class="validate" path="nom" />
-			<form:label path="nom" data-error="" data-success="">Nom </form:label>
-			
-			<%-- 
-				<input id="candidat_nom" type="text" class="validate" name="nom" value="${ candidat.nom }" />
-				<label for="candidat_nom">Nom</label> --%>
+				<form:input class="validate" path="nom" />
+				<form:label path="nom" data-error="" data-success="">Nom </form:label>
 			</div>
 			
 			
 			
 			<div class="input-field">
-			<form:input class="validate" path="prenom" />
-			<form:label path="prenom" data-error="" data-success="">Prenom </form:label>
-			
-				<%-- <input id="candidat_prenom" type="text" class="validate" name="prenom" value="${ candidat.prenom }" />
-				<label for="candidat_prenom">Prenom</label> --%>
+				<form:input class="validate" path="prenom" />
+				<form:label path="prenom" data-error="" data-success="">Prenom </form:label>
 			</div>
 			
 			
@@ -44,6 +36,8 @@
 			<div class="raw">
 				Voici la clé d'accès générée : <span id="texteAInserer"></span>
 			</div>
+			
+			<form:input type="hidden" path="cleAcces" id="idCleAccess" value="" />
 			
 			
 			
