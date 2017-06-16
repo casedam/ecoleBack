@@ -7,22 +7,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
-
 @Controller
-@RequestMapping("/account")
-public class AccountController extends DataAccessController {
-
+@RequestMapping("/home")
+public class HomeController extends DataAccessController {
+	
 	/*
-	 * Page LOGIN
+	 * Page HOME
 	 */
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String loginGET(HttpSession session, Model model) {
 
-		// Permet de rediriger vers la page login
-		return "login";
+		// Permet de rediriger vers la page home
+		return "home";
 	}
 
 
-	
 }

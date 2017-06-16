@@ -1,4 +1,4 @@
-package com.sopra.hibernate.dao;
+package com.sopra.dao.hibernate;
 
 import java.util.List;
 
@@ -70,5 +70,6 @@ public class QuestionHibernateDAO implements IDAO<Question, Integer>{
 			e.printStackTrace();
 		}
 	}
+
 
 }

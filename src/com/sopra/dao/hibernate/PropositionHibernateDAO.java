@@ -1,4 +1,4 @@
-package com.sopra.hibernate.dao;
+package com.sopra.dao.hibernate;
 
 import java.util.List;
 

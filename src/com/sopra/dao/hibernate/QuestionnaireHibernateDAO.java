@@ -1,4 +1,4 @@
-package com.sopra.hibernate.dao;
+package com.sopra.dao.hibernate;
 
 import java.util.List;
 
@@ -74,5 +74,4 @@ public class QuestionnaireHibernateDAO implements IDAO<Questionnaire, Integer> {
 		}
 
 	}
-
 }

@@ -24,7 +24,7 @@
 				
 							
 					<li><a
-						href="${ pageContext.request.contextPath }/account/login">Login</a></li>
+						href="${ pageContext.request.contextPath }/account/login">Accueil</a></li>
 
 					<li><a href="${ pageContext.request.contextPath }/questionnaire">Questionnaires</a></li>
 				</ul>
