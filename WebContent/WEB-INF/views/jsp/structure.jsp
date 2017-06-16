@@ -44,6 +44,7 @@
 	
 		
 	  <script type="text/javascript" src="/ecoleBack/Materialize/js/materialize.min.js"></script>
+	  <script type="text/javascript" src="/ecoleBack/js/candidat.js"></script>
 	  
 	</body>
 </html>
