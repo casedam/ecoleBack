@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sopra.model.Question;
+
+
 @Controller
 @RequestMapping("/question")
 public class QuestionController extends DataAccessController {
@@ -16,6 +18,8 @@ public class QuestionController extends DataAccessController {
 	@RequestMapping(value="", method = RequestMethod.GET)
 	public String getAll(Model model) {
 		
+		model.addAttribute("questions", questionDAO.findAll());
+
 
 		return "question";
 	}
