@@ -26,11 +26,11 @@ public class CandidatController extends DataAccessController {
 
 	
 	
-	@RequestMapping(value = "/new", method = RequestMethod.POST)
+	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public String loginPOST(HttpSession session, Model model) {
 
 		// Permet de rediriger vers la page nouveau candidat
-		return "redirect:candidat";
+		return "newCandidat";
 	}
 
 }
