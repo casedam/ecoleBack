@@ -13,8 +13,7 @@
 		<div class="input-field col s6">
 			<i class="material-icons prefix">account_circle</i>
 			<input class="validate" id="username" name="username" />
-			<label for="username"
-				data-error="" data-success="">Nom d'utilisateur</label>
+			<label for="username" data-error="" data-success="">Nom d'utilisateur</label>
 		</div>
 	</div>
 
@@ -23,13 +22,12 @@
 		<div class="input-field col s6">
 			<i class="material-icons prefix">vpn_key</i>
 			<input class="validate" type="password" id="password" name="password" />
-			<label for="password" data-error=""
-				data-success="">Mot de passe</label>
+			<label for="password" data-error="" data-success="">Mot de passe</label>
 		</div>
 	</div>
 
 
-	<button id="submitLogin" disabled="disabled"
+	<button id="submitLogin"
 		class="btn waves-effect waves-light" type="submit">
 		Se connecter<i class="material-icons right">send</i>
 	</button>
