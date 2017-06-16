@@ -9,11 +9,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sopra.dao.IDAO;
+import com.sopra.dao.IQuestionDAO;
 import com.sopra.model.Question;
 
 @Repository("questionDAO")
 @Transactional
-public class QuestionHibernateDAO implements IDAO<Question, Integer>{
+public class QuestionHibernateDAO implements IQuestionDAO {
 
 	@PersistenceContext
 	private EntityManager entityManager;
